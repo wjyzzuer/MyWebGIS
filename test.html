@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/4.11/esri/themes/dark/main.css">
+  <script src="http://js.arcgis.com/4.11/init.js"></script>
+  
+ 
+</head>
+ <body>
+    <div id="map2d"></div>
+    <div id="map3d"></div>
+    <script>
+        require([
+            'esri/Map',
+            'esri/views/MapView',
+            'esri/views/SceneView',
+            'dojo/domReady'
+            ],function(Map, MapView, SceneView){
+                var map = new Map({
+                    basemap:'streets'
+                });
+                var mapView = new MapView({
+                    map: map,
+                    container:'map2d'
+                })
+                var sceneView = new SceneView({
+                    map: map,
+                    container:'map3d'
+                })
+            });
+    </script>
+    <style>
+        html, body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        #map2d, #map3d {
+            float: left;
+            height: 100%;
+            width: 50%;
+        }
+    </style>
+ </body>
+</html>
